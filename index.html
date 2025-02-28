@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="VR-Robo: A Real-to-Sim-to-Real System for Robot Navigation and Locomotion">
+    <meta name="keywords" content="Real-to-sim-to-real, Legged Locomotion, Reinforcement Learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VR-Robo: A Real-to-Sim-to-Real System for Robot Navigation and Locomotion</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <link rel="icon" href="./icon.png">
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">VR-Robo: A Real-to-Sim-to-Real System for <br> Robot Navigation and Locomotion</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#">Shaoting Zhu</a><sup>*</sup>&nbsp;&nbsp;</span>
+                            <span class="author-block">
+                  <a href="#">Linzhan Mou</a><sup>*</sup>&nbsp;&nbsp;</span>
+                           <span class="author-block">
+                    <a href="#">Derun Li</a>&nbsp;&nbsp;</span>
+                            <span class="author-block">
+                  <a href="#">Baijun Ye</a>&nbsp;&nbsp;
+                </span>
+                            <span class="author-block">
+                  <a href="#">Runhan Huang</a>&nbsp;&nbsp;
+                </span>
+                            <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=DmahiOYAAAAJ">Hang Zhao</a><sup>†</sup>
+                </span>
+                            </span>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            * Equal contribution&nbsp;&nbsp;† Corresponding author
+                        </div>
+                        <!-- <div class="column">
+                            <image src="./static/images/logo.png" style="width:60%;"></image>
+                        </div> -->
+                        <div class="is-size-4 publication-authors">
+                            In Submission
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Appendix Link. -->
+                                <!-- <span class="link-block">
+                <a href="./resources/vr-robo-paper.pdf"
+                class="external-link button is-normal is-rounded is-dark" target="_blank">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                                <span>Appendix</span>
+                                </a>
+                                </span> -->
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                <a href="./resources/vr-robo-paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                                <span>Paper</span>
+                                </a>
+                                </span>
+                                <!-- arXiv Link. -->
+                                <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                                <span>arXiv</span>
+                                </a>
+                                </span>
+                                <!-- Video Link. -->
+                                <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                                <span>Video</span>
+                                </a>
+                                </span>
+                                <!-- Bilibili Link. -->
+                                <span class="link-block">
+                <a href="#"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z" fill="white"></path></svg>                    </span>
+                                <span>Bilibili</span>
+                                </a>
+                                </span>
+                                <!-- Poster Link. -->
+                                <!-- <span class="link-block">
+                <a href="./resources/poster-compressed.pdf"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 428.108 428.108" style="enable-background:new 0 0 428.108 428.108;" xml:space="preserve"><path fill="currentColor" id="XMLID_1137_" d="M236.503,387.867c0,3.866-3.134,7-7,7h-30.898c-3.866,0-7-3.134-7-7s3.134-7,7-7h30.898	C233.369,380.867,236.503,384,236.503,387.867z M314.878,144.35c0,12.285-4.131,23.625-11.076,32.702	c7.079,13.78,11.076,29.392,11.076,45.92c0,55.595-45.229,100.825-100.825,100.825c-55.595,0-100.825-45.23-100.825-100.825	c0-54.853,44.028-99.615,98.601-100.802c8.473-18.695,27.312-31.733,49.137-31.733C290.693,90.437,314.878,114.623,314.878,144.35z	 M221.054,144.35c0,22.008,17.904,39.913,39.912,39.913c9.671,0,18.551-3.458,25.466-9.202	c-14.213-21.399-37.658-36.167-64.602-38.569C221.32,139.033,221.054,141.661,221.054,144.35z M300.878,222.972	c0-12.638-2.715-24.655-7.591-35.498c-9.012,6.772-20.206,10.789-32.321,10.789c-29.728,0-53.913-24.186-53.913-53.913	c0-2.707,0.201-5.368,0.588-7.97c-44.893,3.293-80.413,40.872-80.413,86.592c0,47.876,38.949,86.825,86.825,86.825	S300.878,270.848,300.878,222.972z M300.878,144.35c0-22.008-17.904-39.913-39.912-39.913c-14.163,0-26.628,7.417-33.714,18.569	c28.1,3.689,52.593,18.996,68.486,40.923C299.01,158.141,300.878,151.46,300.878,144.35z M252.177,355.057h-76.244	c-3.866,0-7,3.134-7,7s3.134,7,7,7h76.244c3.866,0,7-3.134,7-7S256.043,355.057,252.177,355.057z M379.295,49.957v371.151	c0,3.866-3.134,7-7,7H55.813c-3.866,0-7-3.134-7-7V49.957c0-3.866,3.134-7,7-7h68.925l86.236-42.243	c1.943-0.951,4.216-0.951,6.159,0l86.236,42.243h68.925C376.161,42.957,379.295,46.09,379.295,49.957z M156.563,42.957h114.983	l-57.492-28.162L156.563,42.957z M365.295,56.957h-63.404c-0.098,0.003-0.196,0.003-0.296,0H126.514	c-0.099,0.002-0.198,0.002-0.296,0H62.813v357.151h302.482V56.957z"/><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>                    </span>
+                    <span>Poster</span>
+                </a>
+              </span> -->
+                                <!-- twitter Link. -->
+                                <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                                <span>Summary</span>
+                                </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="columns is-centered">
+                            <div class="column is-four-fifths is-centered has-text-centered">
+                                <figure>
+                                    <img src="./static/images/teaser.png" alt="figure1" style="width: 100%;">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-full-width is-centered has-text-centered">
+                    <!-- <h2 class="title is-2" style="text-align: center;" id="method-video" >Real-World Robot Parkour Demos</h2> -->
+                    <div class="publication-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/nzzRdFPNHMs?si=w_6XGOFGgdzx0pLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-2">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Recent success in legged robot locomotion is attributed to the integration of reinforcement learning and physical simulators. 
+                            However, these policies often encounter challenges when deployed in real-world environments due to sim-to-real gaps, as simulators 
+                            typically fail to replicate visual realism and complex real-world geometry. Moreover, the lack of realistic visual rendering 
+                            limits the ability of these policies to support high-level tasks requiring RGB-based perception like ego-centric navigation.
+                            This paper presents a <b>Real-to-Sim-to-Real</b> system that generates photorealistic and physically interactive "digital twin"
+                            simulation environments for visual navigation and locomotion learning. Our approach leverages 3DGS-based scene reconstruction 
+                            from multi-view images and integrates these environments into simulations that support ego-centric visual perception and mesh-based 
+                            physical interactions. To demonstrate its effectiveness, we train a reinforcement learning policy within the simulator to perform a 
+                            visual goal-tracking task. Extensive experiments show that our system achieves RGB-only sim-to-real policy transfer. Additionally, 
+                            our system facilitates the rapid adaptation of robot policies to new environments, highlighting its potential for applications in 
+                            households and factories.                        
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">Method</h2>
+            <h2 class="title is-4" style="text-align: center;">Framework Overview of VR-Robo System. </h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We first reconstruct the 3D Gaussians and meshes of the environment and objects from the captured images. 
+                            These reconstructions are then randomly composed. After that, we train the policy network in simulation. 
+                            Finally, the policy is deployed to the real robot without requiring additional fine-tuning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths is-centered has-text-centered">
+                    <figure>
+                        <img src="./static/images/framework.jpg" alt="framework" style="width: 110%;">
+                    </figure>
+                </div>
+            </div>
+            <h2 class="title is-4" style="text-align: center;">RL Policy Training in the Reconstructed Simulation Environment</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            The agent leverages the ego-view GS photorealistic rendering as visual observations and interacts with 
+                            the mesh extracted from GS in the Issac Sim environment. The agent receives the RGB image feature from 
+                            ViT encoder, proprioception from simulator sensors, and a task-specific RGB command as input, using an 
+                            asymmetric actor-critic LSTM structure to output the velocity command for low-level policy control.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-four-fifths is-centered has-text-centered">
+                    <figure>
+                        <img src="./static/images/rl.png" alt="rl" style="width: 110%;">
+                    </figure>
+                </div>
+            </div>
+
+            <h2 class="title is-4" style="text-align: center;">Agent-object Randomization and Scene Composition</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            At the beginning of each episode, we randomly sample the mesh positions for the robot and three cones in the Isaac Sim environment (upper row). We synchronously merge the agent and object Gaussians into the environment and compose for joint rendering (lower row). Both mesh and Gaussian rendering results shown here are in the Bird's-Eye View (BEV) with the same camera pose.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths is-centered has-text-centered">
+                    <img src="./static/images/random_example.png" alt="random_example" style="width: 75%;" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-2" style="text-align: center;">Experiments</h2>
+
+            <h2 class="title is-4" style="text-align: center;">Real World Experimients</h2>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths is-centered has-text-centered">
+                    <figure>
+                        <img src="./static/images/real-world.png" alt="real-world" style="width: 100%;">
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-full-width is-centered has-text-centered">   
+                    <h2 class="title is-4" style="text-align: center;">Video Demos</h2>
+                    <div class="experiment-video" style="float: left; margin-left: 65px;">   
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/G3ukvqdofiA?si=3xmyt9DZVyxUTrUt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="experiment-video" style="float: right; margin-right: 65px;">                     
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uy7gaJKvDCE?si=zkekKn6sxj_z2zfx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full-width is-centered has-text-centered">   
+                    <div class="experiment-video" style="float: left; margin-left: 265px;">   
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/cHuR5eVgggM?si=US3CLpBfUCePryGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="experiment-video" style="float: right; margin-right: 265px;">                     
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JnG4NFjP1ts?si=-l946G3zGvT64hsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full-width is-centered has-text-centered">   
+                    <div class="experiment-video" style="float: left; margin-left: 265px;">   
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/q_kRIuu9aBk?si=SLQdxg6m_7sW111_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="experiment-video" style="float: right; margin-right: 265px;">                     
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/E6WA_FfIK80?si=SvuiJmKAhXmX3Ita" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="title is-4" style="text-align: center; margin-top: 20px;">Quantitative Results in Simulation</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We conduct comparison and ablation experiments with various baselines.                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths is-centered has-text-centered">
+                    <figure style="display: inline-block; margin: 0 1%;">
+                        <img src="./static/images/simulation1.png" alt="simulation1" style="width: 50.5%; float:left;">
+                        <img src="./static/images/simulation2.png" alt="simulation2" style="width: 48%; float:right;">
+                    </figure>
+                </div>
+            </div>
+
+
+            <section class="section" id="BibTeX">
+                <div class="container content">
+                    <h2 class="titile">BibTeX</h2>
+                    <pre><code>TBA
+</code></pre>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.</p>
+                    </div>
+                </div>
+            </footer>
+
+</body>
+
+</html>
