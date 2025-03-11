@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="VR-Robo: A Real-to-Sim-to-Real System for Robot Navigation and Locomotion">
-    <meta name="keywords" content="Real-to-sim-to-real, Legged Locomotion, Reinforcement Learning">
+    <meta name="description" content="MoELoco: Mixture of Experts for Multitask Locomotion">
+    <meta name="keywords" content="Mixture of Experts, Legged Locomotion, Reinforcement Learning">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VR-Robo: A Real-to-Sim-to-Real System for Robot Navigation and Locomotion</title>
+    <title>MoELoco: Mixture of Experts for Multitask Locomotion</title>
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -27,6 +27,19 @@
     <link rel="icon" href="./icon.png">
 
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script type="text/javascript">
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['\\[', '\\]'], ['\\begin{equation}', '\\end{equation}']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 
@@ -37,22 +50,16 @@
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">VR-Robo: A Real-to-Sim-to-Real System for <br> Robot Navigation and Locomotion</h1>
+                        <h1 class="title is-1 publication-title">MoELoco: Mixture of Experts for Multitask Locomotion</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="#">Shaoting Zhu</a><sup>*</sup>&nbsp;&nbsp;</span>
+                                <a href="https://scholar.google.com/citations?user=7N0VoNsAAAAJ&hl=en">Runhan Huang</a><sup>*</sup>&nbsp;&nbsp;</span>
                             <span class="author-block">
-                  <a href="#">Linzhan Mou</a><sup>*</sup>&nbsp;&nbsp;</span>
+                  <a href="https://zst1406217.github.io/">Shaoting Zhu</a><sup>*</sup>&nbsp;&nbsp;</span>
                            <span class="author-block">
-                    <a href="#">Derun Li</a>&nbsp;&nbsp;</span>
+                    <a href="https://yilundu.github.io/">Yilun Du</a>&nbsp;&nbsp;</span>
                             <span class="author-block">
-                  <a href="#">Baijun Ye</a>&nbsp;&nbsp;
-                </span>
-                            <span class="author-block">
-                  <a href="#">Runhan Huang</a>&nbsp;&nbsp;
-                </span>
-                            <span class="author-block">
-                  <a href="https://scholar.google.com/citations?hl=zh-CN&user=DmahiOYAAAAJ">Hang Zhao</a><sup>†</sup>
+                  <a href="https://hangzhaomit.github.io">Hang Zhao</a><sup>†</sup>
                 </span>
                             </span>
                         </div>
@@ -79,7 +86,7 @@
                                 </span> -->
                                 <!-- PDF Link. -->
                                 <span class="link-block">
-                <a href="./resources/vr-robo-paper.pdf"
+                <a href="./resources/MoELoco_paper.pdf"
                    class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -99,23 +106,24 @@
                                 </span>
                                 <!-- Video Link. -->
                                 <span class="link-block">
-                <a href="#"
+                <a href="https://youtu.be/1zXk7IeruVM"
                    class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
                                 <span>Video</span>
-                                </a>
-                                </span>
-                                <!-- Bilibili Link. -->
-                                <span class="link-block">
-                <a href="#"
+                </a>
+                </span>
+                <!-- Bilibili Link. -->
+                <span class="link-block">
+                    <a href="https://www.bilibili.com/video/BV1fWRJY8EcS/"
                     class="external-link button is-normal is-rounded is-dark" target="_blank">
                     <span class="icon">
-                      <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z" fill="white"></path></svg>                    </span>
-                                <span>Bilibili</span>
-                                </a>
-                                </span>
+                        <i class="fab fa-youtube"></i>
+                    </span>
+                                    <span>Bilibili</span>
+                    </a>
+                </span>
                                 <!-- Poster Link. -->
                                 <!-- <span class="link-block">
                 <a href="./resources/poster-compressed.pdf"
@@ -140,7 +148,7 @@
                         <div class="columns is-centered">
                             <div class="column is-four-fifths is-centered has-text-centered">
                                 <figure>
-                                    <img src="./static/images/teaser.png" alt="figure1" style="width: 100%;">
+                                    <img src="./static/images/teaser.png" alt="figure1" style="width: 80%;">
                                 </figure>
                             </div>
                         </div>
@@ -156,7 +164,7 @@
                 <div class="column is-full-width is-centered has-text-centered">
                     <!-- <h2 class="title is-2" style="text-align: center;" id="method-video" >Real-World Robot Parkour Demos</h2> -->
                     <div class="publication-video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/nzzRdFPNHMs?si=w_6XGOFGgdzx0pLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/1zXk7IeruVM?si=F3Iqdcn8FsOsrlZx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -171,17 +179,18 @@
                     <h2 class="title is-2">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Recent success in legged robot locomotion is attributed to the integration of reinforcement learning and physical simulators. 
-                            However, these policies often encounter challenges when deployed in real-world environments due to sim-to-real gaps, as simulators 
-                            typically fail to replicate visual realism and complex real-world geometry. Moreover, the lack of realistic visual rendering 
-                            limits the ability of these policies to support high-level tasks requiring RGB-based perception like ego-centric navigation.
-                            This paper presents a <b>Real-to-Sim-to-Real</b> system that generates photorealistic and physically interactive "digital twin"
-                            simulation environments for visual navigation and locomotion learning. Our approach leverages 3DGS-based scene reconstruction 
-                            from multi-view images and integrates these environments into simulations that support ego-centric visual perception and mesh-based 
-                            physical interactions. To demonstrate its effectiveness, we train a reinforcement learning policy within the simulator to perform a 
-                            visual goal-tracking task. Extensive experiments show that our system achieves RGB-only sim-to-real policy transfer. Additionally, 
-                            our system facilitates the rapid adaptation of robot policies to new environments, highlighting its potential for applications in 
-                            households and factories.                        
+                            We present MoE-Loco, a Mixture of Experts (MoE) framework for
+                            multitask locomotion for legged robots. Our method enables a 
+                            single policy to handle diverse terrains, including bars, pits,
+                            stairs, slopes, and baffles, while supporting quadrupedal and 
+                            bipedal gaits. Using MoE, we mitigate the gradient conflicts 
+                            that typically arise in multitask reinforcement learning, 
+                            improving both training efficiency and performance. 
+                            Our experiments demonstrate that different experts naturally 
+                            specialize in distinct locomotion behaviors, which can be 
+                            leveraged for task migration and skill composition. 
+                            We further validate our approach in both simulation and real-world deployment, 
+                            showcasing its robustness and adaptability.                        
                         </p>
                     </div>
                 </div>
@@ -194,60 +203,71 @@
     <section class="section">
         <div class="container">
             <h2 class="title is-2" style="text-align: center;">Method</h2>
-            <h2 class="title is-4" style="text-align: center;">Framework Overview of VR-Robo System. </h2>
+            <h2 class="title is-4" style="text-align: center;">MoE Based Multitask Locomotion Learning </h2>
+            <div class="columns is-centered">
+                <div class="column is-four-fifths is-centered has-text-centered">
+                    <figure>
+                        <img src="./static/images/framework.png" alt="framework" style="width: 110%;">
+                    </figure>
+                </div>
+            </div>
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <div class="content has-text-justified">
                         <p>
-                            We first reconstruct the 3D Gaussians and meshes of the environment and objects from the captured images. 
-                            These reconstructions are then randomly composed. After that, we train the policy network in simulation. 
-                            Finally, the policy is deployed to the real robot without requiring additional fine-tuning.
+                            Our training primarily follows the Probability Annealing Selection (PAS) paradigm.
+                            Overall, the robot utilizes both previleged and proprioceptive information in the first stage,
+                            and gradually transitions to proprioceptive information only in the second 
+                            stage by probablistic annealing. The key design is that we incorporate a Mixture of Experts (MoE) 
+                            structure to handle the multi-task reinforcement learning problem.
+                        </p>
+                        <p>
+                            \begin{equation}
+                                \hat{\boldsymbol{g}_{i}} = \text{softmax} (g(\boldsymbol{h}_t))[i]
+                            \end{equation}
+                            \begin{equation}
+                                \boldsymbol{a}_t = \sum_{i = 1}^{N}\hat{\boldsymbol{g}_{i}}\cdot f_{i}(\boldsymbol{h}_t)
+                            \end{equation}
+                        </p>
+                        <p>
+                            The MoE architecture facilitates the coordination of similar task skills 
+                            while minimizing conflicts between heterogeneous tasks by dynamically 
+                            routing tasks to appropriate experts. This automatic routing enables 
+                            specialization, improving both efficiency and task performance. 
+                            Additionally, we incorporate MoE into the critic network to better 
+                            capture diverse task reward structures. The actor MoE, critic MoE, 
+                            and gating network share the same input, which encodes proprioceptive 
+                            states and task-specific features. By using a shared gating network, 
+                            we ensure consistency between policy evaluation and action generation.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths is-centered has-text-centered">
-                    <figure>
-                        <img src="./static/images/framework.jpg" alt="framework" style="width: 110%;">
-                    </figure>
-                </div>
-            </div>
-            <h2 class="title is-4" style="text-align: center;">RL Policy Training in the Reconstructed Simulation Environment</h2>
+            <h2 class="title is-4" style="text-align: center;">Skill Composition and Decomposition</h2>
+            
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <div class="content has-text-justified">
                         <p>
-                            The agent leverages the ego-view GS photorealistic rendering as visual observations and interacts with 
-                            the mesh extracted from GS in the Issac Sim environment. The agent receives the RGB image feature from 
-                            ViT encoder, proprioception from simulator sensors, and a task-specific RGB command as input, using an 
-                            asymmetric actor-critic LSTM structure to output the velocity command for low-level policy control.
+                            With the automatic decomposition of expert skills, we can recombine them with adjustable weights 
+                            to synthesize new skills and gaits. Formally, we leverage pretrained experts and modify the gating weights as follows:
+                        </p>
+
+                        <p style="text-align: center;">
+                            \[
+                            \hat{\boldsymbol{g}_{i}} = w[i] \cdot \text{softmax} (g(\boldsymbol{h}_t))[i],
+                            \]
+                        </p>
+
+                        <p>
+                            where \( w[i] \) can be manually defined or dynamically adjusted by a neural network. 
+                            This formulation enables controlled skill blending, allowing the robot to adapt and generalize 
+                            to novel locomotion patterns. The skill composition results from the 
+                            automatic skill decomposition and interpretability inherent in the MoE architecture. 
+                            In contrast, a standard neural network would function as a black box, 
+                            lacking such interpretable skill decomposition.
                         </p>
                     </div>
-                </div>
-            </div>
-
-            <div class="columns is-centered">
-                <div class="column is-four-fifths is-centered has-text-centered">
-                    <figure>
-                        <img src="./static/images/rl.png" alt="rl" style="width: 110%;">
-                    </figure>
-                </div>
-            </div>
-
-            <h2 class="title is-4" style="text-align: center;">Agent-object Randomization and Scene Composition</h2>
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <div class="content has-text-justified">
-                        <p>
-                            At the beginning of each episode, we randomly sample the mesh positions for the robot and three cones in the Isaac Sim environment (upper row). We synchronously merge the agent and object Gaussians into the environment and compose for joint rendering (lower row). Both mesh and Gaussian rendering results shown here are in the Bird's-Eye View (BEV) with the same camera pose.
-                        </p>
-                        </div>
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths is-centered has-text-centered">
-                    <img src="./static/images/random_example.png" alt="random_example" style="width: 75%;" />
                 </div>
             </div>
         </div>
@@ -257,66 +277,184 @@
         <div class="container">
             <h2 class="title is-2" style="text-align: center;">Experiments</h2>
 
-            <h2 class="title is-4" style="text-align: center;">Real World Experimients</h2>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths is-centered has-text-centered">
-                    <figure>
-                        <img src="./static/images/real-world.png" alt="real-world" style="width: 100%;">
-                    </figure>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-full-width is-centered has-text-centered">   
-                    <h2 class="title is-4" style="text-align: center;">Video Demos</h2>
-                    <div class="experiment-video" style="float: left; margin-left: 65px;">   
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/G3ukvqdofiA?si=3xmyt9DZVyxUTrUt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="experiment-video" style="float: right; margin-right: 65px;">                     
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uy7gaJKvDCE?si=zkekKn6sxj_z2zfx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column is-full-width is-centered has-text-centered">   
-                    <div class="experiment-video" style="float: left; margin-left: 265px;">   
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/cHuR5eVgggM?si=US3CLpBfUCePryGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="experiment-video" style="float: right; margin-right: 265px;">                     
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JnG4NFjP1ts?si=-l946G3zGvT64hsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column is-full-width is-centered has-text-centered">   
-                    <div class="experiment-video" style="float: left; margin-left: 265px;">   
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/q_kRIuu9aBk?si=SLQdxg6m_7sW111_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="experiment-video" style="float: right; margin-right: 265px;">                     
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/E6WA_FfIK80?si=SvuiJmKAhXmX3Ita" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <h2 class="title is-4" style="text-align: center; margin-top: 20px;">Quantitative Results in Simulation</h2>
+            <h2 class="title is-4" style="text-align: center;">Gradient Conflict Experimients</h2>
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
                     <div class="content has-text-justified">
                         <p>
-                            We conduct comparison and ablation experiments with various baselines.                        </p>
+                            The MoE policy significantly reduces gradient conflict between bipedal and
+                            quadrupedal tasks. It also minimizes gradient conflict even
+                            between quadrupedal tasks that require fundamentally different skills, such as quadrupedal bar crossing and quadrupedal
+                            baffle crawling.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/gd.png" alt="gd" style="width: 80%;">
+                        </figure>
                     </div>
                 </div>
             </div>
-            <div class="columns is-centered">
-                <div class="column is-four-fifths is-centered has-text-centered">
-                    <figure style="display: inline-block; margin: 0 1%;">
-                        <img src="./static/images/simulation1.png" alt="simulation1" style="width: 50.5%; float:left;">
-                        <img src="./static/images/simulation2.png" alt="simulation2" style="width: 48%; float:right;">
-                    </figure>
+
+            <h2 class="title is-4" style="text-align: center;">Real-World Experiments</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We conducted real-world experiments over multiple terrains and gaits: 
+                            1. Bar (Quad), 2. Pit (Quad), 3. Baffle (Quad), 4. Stair (Quad), 
+                            5. Slope (Quad), 6. Stand up (Bip), 7. Walk (Bip), 8. Slope (Bip), 9. Stair (Bip).
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/real-exp.pdf" alt="real-exp" style="width: 100%;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We deploy our MoE policy zero-shotly on real robots and conduct real world experiments.
+                            We test mix terrain that contains all challenging tasks, as well
+                            as each separated terrains.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/real-plot.pdf" alt="real-plot" style="width: 70%;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <h2 class="title is-4" style="text-align: center;">Expert Spetialization</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We examined the expert usage in different tasks. We plot the mean weight of 
+                            different experts across various tasks. 
+                            It is evident that the distribution of gating weights varies significantly 
+                            from task to task, demonstrating the expertise and differentiation of various experts.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/gating_weight_plot.pdf" alt="gating_weight_plot" style="width: 100%;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            To further analyze the composition of different experts across various tasks, 
+                            we use t-SNE to visualize the output of the gating network for different 
+                            tasks (i.e., the weight of each expert). 
+                            As shown below, the bipedal and quadrupedal tasks form distinct clusters.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/expert_gating_tsne.pdf" alt="expert_gating_tsne" style="width: 60%;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="title is-4" style="text-align: center;">Skill Composition</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We discovered that one expert specializes 
+                            in balancing, which helps lift the robot's body but limits its agility. 
+                            Another expert is responsible for lifting one of the front legs to perform 
+                            crossing tasks, enabling the robot to execute basic movement skills. 
+                            By selecting the balancing expert and the crossing expert, we are able to 
+                            zero-shot transfer to a new dribbling pattern. The new dribbling gait 
+                            allows the robot to walk effectively while periodically using one of its 
+                            front legs to kick the ball. 
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/dribble.png" alt="dribble" style="width: 100%;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="title is-4" style="text-align: center;">Adaptation Experiment</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We conduct an adaptation learning experiment to demonstrate how our pretrained experts can be recomposed and
+                            adapted to new tasks. In this experiment, we design the robot
+                            to walk on three feet.
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/3feet.pdf" alt="3feet" style="width: 100%;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="title is-4" style="text-align: center;">Simulation Experiments</h2>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <p>
+                            We constructed a benchmark for quadrupedal robot locomotion across different tasks. 
+                            Our benchmark consists of a 5m times 100m runway with various obstacles evenly distributed along the path. 
+                        </p>
+                        </div>
+                </div>
+            </div>
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-justified">
+                        <figure>
+                            <img src="./static/images/sim-exp.png" alt="sim-exp" style="width: 100%;">
+                        </figure>
+                    </div>
                 </div>
             </div>
 
